@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Module 2 Solution</title>
+</head>
+<body>
+	<center><h1>Assignment -2</h1></center>
+	<table id="dtable">
+		<thead><tr><th>S.NO</th><th>Title</th><th>Action</th></tr></thead>
+		<tbody id="tblbody">
+		
+		
+		
+		
+		
+		
+		
+		</tbody>
+	</table>
+<script>
+	var dumarry=['<tr><td>1.</td><td>Title 1</td><td><button class="upbtn" >UP</button>&nbsp;&nbsp;&nbsp;<button class="dwnbtn" >DOWN</button></td></tr>','<tr><td>2.</td><td>Title 2</td><td><button class="upbtn"  >UP</button>&nbsp;&nbsp;&nbsp;<button class="dwnbtn" >DOWN</button></td></tr>','<tr><td>3.</td><td>Title 3</td><td><button class="upbtn" >UP</button>&nbsp;&nbsp;&nbsp;<button class="dwnbtn" >DOWN</button></td></tr>','<tr><td>4.</td><td>Title 4</td><td><button class="upbtn" >UP</button>&nbsp;&nbsp;&nbsp;<button class="dwnbtn" >DOWN</button></td></tr>','<tr><td>5.</td><td>Title 5</td><td>			<button class="upbtn" >UP</button>&nbsp;&nbsp;&nbsp;<button class="dwnbtn" >DOWN</button></td></tr>','<tr><td>6.</td><td>Title 6</td><td><button class="upbtn">UP</button>&nbsp;&nbsp;&nbsp;<button class="dwnbtn">DOWN</button></td></tr>','<tr><td>7.</td><td>Title 7</td><td>			<button class="upbtn" >UP</button>&nbsp;&nbsp;&nbsp;<button class="dwnbtn">DOWN</button></td></tr>'];
+	document.getElementById("tblbody").innerHTML=dumarry.join('');
+	var count=document.querySelectorAll('.upbtn').length;
+	var i;
+	var uelements = document.getElementsByClassName('upbtn');
+	var delements = document.getElementsByClassName('dwnbtn');
+	for(i=0;i<count;i++)
+	{
+		uelements[i].setAttribute("onclick","funclick(this,"+i+")");
+		delements[i].setAttribute("onclick","funclick2(this,"+i+")");
+if(i==0)
+{
+uelements[i].setAttribute("disabled","disabled");
+}
+else{
+uelements[i].removeAttribute("disabled");	
+}
+if(i==6)
+{
+delements[i].setAttribute("disabled","disabled");
+}
+else{
+delements[i].removeAttribute("disabled");
+
+}
+
+}
+
+function funclick(obj,n)
+{
+	// alert(n);
+	// alert(obj);
+		var count=document.querySelectorAll('.upbtn').length;
+	var i;
+	// alert(count);
+for(i=0;i<count;i++)
+{
+	// alert(n);
+	if(i==n)
+	{
+
+if(i!=0)
+{
+	var t='',f='';
+	t=dumarry[i];
+	f=dumarry[i-1];
+	dumarry[i-1]=t;
+	dumarry[i]=f;
+	console.log(dumarry);
+	document.getElementById("tblbody").innerHTML=dumarry.join('');
+
+}
+
+}
+}
+for(i=0;i<count;i++)
+{
+	uelements[i].setAttribute("onclick","funclick(this,"+i+")");
+		delements[i].setAttribute("onclick","funclick2(this,"+i+")");
+if(i==0)
+{
+uelements[i].setAttribute("disabled","disabled");
+}
+else{
+uelements[i].removeAttribute("disabled");	
+}
+if(i==6)
+{
+delements[i].setAttribute("disabled","disabled");
+}
+else{
+delements[i].removeAttribute("disabled");
+
+}
+}
+}
+
+function funclick2(obj,n)
+{
+	// alert(n);
+	// alert(obj);
+		var count=document.querySelectorAll('.dwnbtn').length;
+	var i;
+	// alert(count);
+for(i=0;i<count;i++)
+{
+	// alert(n);
+	if(i==n)
+	{
+
+if(i!=count)
+{
+	var t='',f='';
+	t=dumarry[i];
+	f=dumarry[i+1];
+	dumarry[i+1]=t;
+	dumarry[i]=f;
+	console.log(dumarry);
+	document.getElementById("tblbody").innerHTML=dumarry.join('');
+
+}
+
+}
+}
+for(i=0;i<count;i++)
+{
+	uelements[i].setAttribute("onclick","funclick(this,"+i+")");
+		delements[i].setAttribute("onclick","funclick2(this,"+i+")");
+if(i==0)
+{
+uelements[i].setAttribute("disabled","disabled");
+}
+else{
+uelements[i].removeAttribute("disabled");	
+}
+if(i==6)
+{
+delements[i].setAttribute("disabled","disabled");
+}
+else{
+delements[i].removeAttribute("disabled");
+
+}
+}
+}
+
+</script>
+</body>
+</html>
